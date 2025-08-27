@@ -57,6 +57,6 @@ public partial class ListaProduto : ContentPage
 
     private void MenuItem_Clicked(object sender, EventArgs e)
     {
-
+        //
     }
 }
