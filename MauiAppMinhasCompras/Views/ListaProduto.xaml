@@ -18,10 +18,10 @@
         <SearchBar x:Name="text_search" 
                    Placeholder="Busca de produtos"
                    TextChanged="text_search_TextChanged"/>
-        <ListView x:Name="lst_produtos">
+        <ListView x:Name="lst_produtos" ItemSelected="lst_produtos_ItemSelected">
             
             <ListView.Header>
-                <Grid ColumnDefinitions="*, *, *, *, *, *">
+                <Grid ColumnDefinitions="*, *, *, *, *">
                     <Label Grid.Column="0" Text="Id"/>
                     <Label Grid.Column="1" Text="Descrição"/>
                     <Label Grid.Column="2" Text="Preço"/>
@@ -32,10 +32,10 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <ViewCell.ContextActions>
-                            <MenuItem Text="Remover" Clicked="MenuItem_Clicked"/>
+                        <ViewCell.ContextActions> <!--Menu de contexto ou menu de opções(botão direito)-->
+                            <MenuItem Text="Remover" Clicked="MenuItem_Clicked"/> 
                         </ViewCell.ContextActions>
-                        <Grid ColumnDefinitions="*, *, *, *, *, *">
+                        <Grid ColumnDefinitions="*, *, *, *, *">
                             <Label Grid.Column="0" Text="{Binding Id}"/>
                             <Label Grid.Column="1" Text="{Binding Descricao}"/>
                             <Label Grid.Column="2" Text="{Binding Preco}"/>
