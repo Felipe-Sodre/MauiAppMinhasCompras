@@ -18,7 +18,7 @@ public partial class ListaProduto : ContentPage
     {
         try
         {
-            lista.Clear();
+            lista.Clear(); //Limpar
             List<Produto> tmp = await App.Db.GetAll();
 
             tmp.ForEach(i => lista.Add(i));
