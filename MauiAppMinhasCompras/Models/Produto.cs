@@ -2,6 +2,7 @@
 
 namespace MauiAppMinhasCompras.Models
 {
+    //
     public class Produto
     {
         string _descricao;
