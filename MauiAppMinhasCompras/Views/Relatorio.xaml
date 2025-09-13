@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sys="clr-namespace:System;assembly=netstandard"
+             x:Class="MauiAppMinhasCompras.Views.Relatorio"
+             Title="Relatório de Compras">
+
+    <VerticalStackLayout Padding="10" Spacing="10">
+
+        <Label Text="Filtrar por período:" FontAttributes="Bold"/>
+
+        <HorizontalStackLayout Spacing="10">
+            <DatePicker x:Name="DatePickerInicio"
+                Date="{x:Static sys:DateTime.Today}"
+                Format="dd/MM/yyyy"/>
+
+            <DatePicker x:Name="DatePickerFim"
+                Date="{x:Static sys:DateTime.Today}"
+                Format="dd/MM/yyyy"/>
+        </HorizontalStackLayout>
+
+        <Button Text="Filtrar" Clicked="OnFiltrarClicked"/>
+
+        <Label x:Name="lblTotalGasto" Text="Total Gasto: R$ 0,00" FontAttributes="Bold" FontSize="Medium"/>
+
+        <CollectionView x:Name="CollectionViewProdutos" Margin="0,10,0,0">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <HorizontalStackLayout Spacing="10">
+                        <Label Text="{Binding Descricao}" WidthRequest="120"/>
+                        <Label Text="{Binding Quantidade}" WidthRequest="60"/>
+                        <Label Text="{Binding Preco, StringFormat='{0:C}'}" WidthRequest="80"/>
+                        <!-- Novo Label para exibir a data de cadastro -->
+                        <Label Text="{Binding DataCadastro, StringFormat='{0:dd/MM/yyyy}'}" WidthRequest="100"/>
+                    </HorizontalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </VerticalStackLayout>
+</ContentPage>

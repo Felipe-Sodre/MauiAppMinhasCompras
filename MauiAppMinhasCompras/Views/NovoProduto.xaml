@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:sys="clr-namespace:System;assembly=netstandard"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiAppMinhasCompras.Views.NovoProduto"
              Title="NovoProduto">
@@ -21,6 +22,13 @@
             
         <Label Text="Preço Unitártio:" />
         <Entry x:Name="txt_preco" Keyboard="Numeric"/>
+
+        <!--Novo campo para preencher a data-->
+        <Label Text="Data da Compra:"/>
+        <DatePicker x:Name="datePickerData"
+            Date="{x:Static sys:DateTime.Today}"
+            Format="dd/MM/yyyy"/>
+
 
     </VerticalStackLayout>
 </ContentPage>

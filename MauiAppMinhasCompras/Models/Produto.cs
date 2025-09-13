@@ -2,7 +2,7 @@
 
 namespace MauiAppMinhasCompras.Models
 {
-    //
+    
     public class Produto
     {
         string _descricao;
@@ -23,5 +23,10 @@ namespace MauiAppMinhasCompras.Models
         public double Quantidade { get; set; }
         public double Preco { get; set; }
         public double Total { get => Quantidade * Preco; }
+
+        //Nova propriedade com relação a data de cadastro
+        public DateTime DataCadastro { get; set; }
     }
+
+
 }
